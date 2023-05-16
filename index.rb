@@ -17,6 +17,7 @@ when "add"
     puts "What rating does the movie have? "
     rating = gets.chomp
     movies[title.to_sym] = rating.to_i
+    puts "#{title} has been added with a rating of #{rating}."
   else
     puts "That movie already exists! Its rating is #{movies[title.to_sym]}."
   end
@@ -29,6 +30,7 @@ when "update"
     puts "What is the new rating? "
     rating = gets.chomp
     movies[title.to_sym] = rating.to_i
+    puts "#{title} has been updated with new rating of #{rating}."
   end
 when "display"
   movies.each do |title, rating|
@@ -41,6 +43,7 @@ when "delete"
     puts "That movie does not exist."
   else
     movies.delete(title.to_sym)
+    puts "#{title} has been removed."
   end
 else
   puts "Error!"
